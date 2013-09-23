@@ -8,5 +8,6 @@ Just a [URL](/url/).
 
 [URL and title](/url/ "title has spaces afterward"  ).
 
+[pandoc style with auto link](bacon bacon bacon).
 
 [Empty]().

@@ -1,6 +1,6 @@
 name := "pegdown"
 
-version := "1.4.1"
+version := "1.4.2-SNAPSHOT"
 
 homepage := Some(new URL("http://pegdown.org"))
 
@@ -56,11 +56,8 @@ useGpg := true
 
 pgpSigningKey := Some(-2321133875171851978L)
 
-publishTo <<= version { v: String =>
-  val nexus = "https://oss.sonatype.org/"
-  if (v.trim.endsWith("SNAPSHOT")) Some("snapshots" at nexus + "content/repositories/snapshots")
-  else                             Some("releases" at nexus + "service/local/staging/deploy/maven2")
-}
+
+publishTo := Some(Resolver.file("file",  new File(Path.userHome.absolutePath+"/.m2/repository")))
 
 pomExtra :=
   <scm>

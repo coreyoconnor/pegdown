@@ -894,7 +894,7 @@ public class Parser extends BaseParser<Object> implements Extensions {
                         OneOrMore(
                                 FirstOf(
                                         Sequence('\\', AnyOf("()"), url.append(matchedChar())),
-                                        Sequence(TestNot(AnyOf("()>")), Nonspacechar(), url.append(matchedChar()))
+                                        Sequence(TestNot(AnyOf("()>'\"")), ANY, url.append(matchedChar()))
                                 )
                         ),
                         push(url.getString())
